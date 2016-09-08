@@ -7,19 +7,23 @@
   "devDependencies": {
     "bootstrap-sass": "^3.3.7",
     "gulp": "^3.9.1",
+    "gulp-typescript": "^2.13.6",
     "jquery": "^3.1.0",
     "laravel-elixir": "^6.0.0-9",
     "laravel-elixir-vue": "^0.1.4",
     "laravel-elixir-webpack-official": "^1.0.2",
     "lodash": "^4.14.0",
+    "node-sass": "^3.9.3",
     "vue": "^1.0.26",
     "vue-resource": "^0.9.3"
   },
   "dependencies": {
     "angular2": "^2.0.0-beta.17",
+    "es6-promise": "^3.2.1",
     "es6-shim": "^0.35.1",
     "reflect-metadata": "^0.1.8",
     "rxjs": "^5.0.0-beta.11",
+    "systemjs": "^0.19.38",
     "zone.js": "^0.6.17"
   }
 }

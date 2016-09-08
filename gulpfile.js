@@ -1,19 +1,17 @@
 const elixir = require('laravel-elixir');
+const gulp = require("gulp");
+const ts = require("gulp-typescript");
 
-require('laravel-elixir-vue');
+gulp.task('default', ['compile-ts']);
 
-/*
- |--------------------------------------------------------------------------
- | Elixir Asset Management
- |--------------------------------------------------------------------------
- |
- | Elixir provides a clean, fluent API for defining some basic Gulp tasks
- | for your Laravel application. By default, we are compiling the Sass
- | file for our application, as well as publishing vendor resources.
- |
- */
+gulp.task('compile-sass', function () {
 
-elixir(mix => {
-    mix.sass('app.scss')
-       .webpack('app.js');
+});
+
+gulp.task("compile-ts", function () {
+    return gulp.src('resources/assets/js/**/*.ts')
+        .pipe(ts({
+            out: 'app.js'
+        }))
+        .js.pipe(gulp.dest("public/js/"));
 });
