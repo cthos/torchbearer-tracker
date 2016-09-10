@@ -15,3 +15,12 @@ gulp.task("compile-ts", function () {
         }))
         .js.pipe(gulp.dest("public/js/"));
 });
+
+gulp.task('copy-node-modules', function () {
+  const src = [
+    'node_modules/{angular2,es6-shim,rxjs,systemjs}/**/*'
+  ];
+
+  return gulp.src(src)
+    .pipe(gulp.dest('public/js/vendor'));
+});

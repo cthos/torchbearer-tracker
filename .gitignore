@@ -7,3 +7,5 @@ Homestead.yaml
 .env
 .vagrant
 Vagrantfile
+public/js
+public/css
