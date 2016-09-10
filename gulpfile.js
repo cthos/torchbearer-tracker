@@ -9,9 +9,10 @@ gulp.task('compile-sass', function () {
 });
 
 gulp.task("compile-ts", function () {
-    return gulp.src('resources/assets/js/**/*.ts')
+    return gulp.src(['resources/assets/js/**/*.ts', 'typings/**/*.d.ts'])
         .pipe(ts({
-            out: 'app.js'
+          experimentalDecorators: true,
+          out: 'app.js'
         }))
         .js.pipe(gulp.dest("public/js/"));
 });
