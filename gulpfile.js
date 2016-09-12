@@ -4,7 +4,12 @@ const ts = require("gulp-typescript");
 const dbug = require("gulp-debug");
 const concat = require("gulp-concat");
 
-gulp.task('default', ['compile-ts']);
+gulp.task('default', ['compile-ts', 'copy-templates']);
+
+gulp.task('watch', function () {
+  gulp.watch(['resources/assets/js/**/*.ts'], ['compile-ts']);
+  gulp.watch(['resources/assets/js/**/*.html'], ['copy-templates']);
+});
 
 gulp.task('compile-sass', function () {
 
@@ -12,14 +17,17 @@ gulp.task('compile-sass', function () {
 
 gulp.task("compile-ts", function () {
     return gulp.src(['resources/assets/js/**/*.ts', 'typings/**/*.d.ts'])
-      .pipe(dbug())
       .pipe(ts({
         experimentalDecorators: true,
         sortOutput: true
       }))
       .js
-      .pipe()
       .pipe(gulp.dest("public/js/"));
+});
+
+gulp.task("copy-templates", function () {
+  return gulp.src(['resources/assets/js/**/*.html'])
+    .pipe(gulp.dest('public/js'));
 });
 
 gulp.task('copy-node-modules', function () {
