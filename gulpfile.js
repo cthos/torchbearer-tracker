@@ -30,6 +30,15 @@ gulp.task("copy-templates", function () {
     .pipe(gulp.dest('public/js'));
 });
 
+gulp.task('copy-css-framework', function () {
+  const src = [
+    'node_modules/spectre.css/dist/spectre.min.css'
+  ];
+
+  return gulp.src(src)
+    .pipe(gulp.dest('public/css/'));
+});
+
 gulp.task('copy-node-modules', function () {
   const src = [
     'node_modules/{@angular,reflect-metadata,rxjs,systemjs,zone.js}/**/*'
