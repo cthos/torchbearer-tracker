@@ -2,7 +2,7 @@
 <head>
     <title>Torchbearer Tracker</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/css/spectre.min.css">
+    <link rel="stylesheet" href="/css/bulma.css">
     <link rel="stylesheet" href="/css/app.css">
 
     <script src='/js/systemjs/dist/system-polyfills.js'></script>
@@ -40,17 +40,13 @@
 </head>
 
 <body>
-<section id="header">
-    <header class="navbar">
-        <section class="navbar-section">
-            <a href="#navbar" class="btn btn-link btn-lg"><i class="icon icon-menu"></i></a>
-            <a href="#navbar" class="navbar-brand">Torchbearer Tracker</a>
-        </section>
-        <section class="navbar-section">
-            <a href="#navbar" class="btn btn-primary">share</a>
-        </section>
-    </header>
-</section>
+<nav class="nav">
+    <section class="nav-left">
+        <a class="nav-item is-brand" href="#navbar" class="navbar-brand">Torchbearer Tracker</a>
+    </section>
+    <section class="nav-right">
+    </section>
+</nav>
 
 
 

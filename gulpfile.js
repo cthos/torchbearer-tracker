@@ -32,7 +32,7 @@ gulp.task("copy-templates", function () {
 
 gulp.task('copy-css-framework', function () {
   const src = [
-    'node_modules/spectre.css/dist/spectre.min.css'
+    'node_modules/bulma/css/bulma.css'
   ];
 
   return gulp.src(src)

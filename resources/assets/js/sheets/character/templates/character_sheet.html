@@ -1,49 +1,97 @@
+<h2>Character Sheet</h2>
 <div class="container columns">
-    <div class="sheet-left col-8">
-        <form action="#" class="form-horizontal">
-            <div class="form-group">
-                <div class="col-md-1">
-                    <label class="form-label" for="char-name">Name</label>
+    <div class="sheet-left column">
+        <form action="#" class="control is-horizontal">
+            <div class="columns">
+                <div class="column">
+                    <div class="control is-grouped">
+                        <label class="control-label" for="char-name">Name</label>
+                        <input class="control" [(ngModel)]="char.name" name="char-name" type="text" id="char-name"/>
+                    </div>
+                    <div class="control is-grouped">
+                        <label class="control-label" for="char-stock">Stock</label>
+                        <input class="control" [(ngModel)]="char.stock" name="char-stock" type="text" id="char-stock"/>
+                    </div>
+                    <div class="control is-grouped">
+                        <label class="control-label" for="char-class">Class</label>
+                        <input class="control" [(ngModel)]="char.class" name="char-class" type="text" id="char-class"/>
+                    </div>
+                    <div class="control is-grouped">
+                        <label class="control-label" for="char-age">Age</label>
+                        <input class="control" [(ngModel)]="char.age" name="char-age" type="text" id="char-age"/>
+                    </div>
+                    <div class="control is-grouped">
+                        <label class="control-label" for="char-home">Home</label>
+                        <input class="control" [(ngModel)]="char.home" name="char-home" type="text" id="char-home"/>
+                    </div>
+                    <div class="control is-grouped">
+                        <label class="control-label" for="char-home">Rainment</label>
+                        <input class="control" [(ngModel)]="char.rainment" name="char-rainment" type="text"
+                               id="char-rainment"/>
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <input class="form-input" [(ngModel)]="char.name" name="char-name" type="text" id="char-name" />
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-md-1">
-                    <label class="form-label" for="char-stock">Stock</label>
-                </div>
-                <div class="col-md-4">
-                    <input class="form-input" [(ngModel)]="char.stock" name="char-stock" type="text" id="char-stock" />
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-md-1">
-                    <label class="form-label" for="char-class">Class</label>
-                </div>
-                <div class="col-md-4">
-                    <input class="form-input" [(ngModel)]="char.class" name="char-class" type="text" id="char-class" />
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-md-1">
-                    <label class="form-label" for="char-age">Age</label>
-                </div>
-                <div class="col-md-4">
-                    <input class="form-input" [(ngModel)]="char.age" name="char-age" type="text" id="char-age" />
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-md-1">
-                    <label class="form-label" for="char-home">Home</label>
-                </div>
-                <div class="col-md-4">
-                    <input class="form-input" [(ngModel)]="char.home" name="char-home" type="text" id="char-home" />
+                <div class="column">
+                    <div class="control is-grouped">
+                        <label class="control-label" for="char-parents">Parents</label>
+                        <input class="control" [(ngModel)]="char.parents" parents="char-parents" type="text"
+                               id="char-parents"/>
+                    </div>
+                    <div class="control is-grouped">
+                        <label class="control-label" for="char-mentor">Mentor</label>
+                        <input class="control" [(ngModel)]="char.mentor" name="char-mentor" type="text"
+                               id="char-mentor"/>
+                    </div>
+                    <div class="control is-grouped">
+                        <label class="control-label" for="char-friend">Friend</label>
+                        <input class="control" [(ngModel)]="char.friend" name="char-friend" type="text"
+                               id="char-friend"/>
+                    </div>
+                    <div class="control is-grouped">
+                        <label class="control-label" for="char-enemy">Enemy</label>
+                        <input class="control" [(ngModel)]="char.enemy" name="char-enemy" type="text" id="char-enemy"/>
+                    </div>
+                    <div class="control is-grouped">
+                        <label class="control-label" for="char-level">Level</label>
+                        <input class="control" [(ngModel)]="char.level" name="char-level" type="text" id="char-level"/>
+                    </div>
+                    <div class="control is-grouped">
+                        <label class="control-label" for="char-home">Alignment</label>
+                        <input class="control" [(ngModel)]="char.rainment" name="char-rainment" type="text"
+                               id="char-rainment"/>
+                    </div>
                 </div>
             </div>
         </form>
     </div>
-    <div class="sheet-right col-8">
-
+    <div class="sheet-right column">
+        <h3 class="text-center">
+            Abilities
+        </h3>
+        <div class="columns">
+            <div class="column">
+                <div class="control is-grouped">
+                    <label class="control-label" for="char-will">Will</label>
+                    <input class="control" [(ngModel)]="char.will" name="char-will" type="text" id="char-will"/>
+                </div>
+                <div class="control is-grouped">
+                    <label class="control-label" for="char-health">Health</label>
+                    <input class="control" [(ngModel)]="char.health" name="char-health" type="text" id="char-health"/>
+                </div>
+                <div class="control is-grouped">
+                    <label class="control-label" for="char-nature">Nature</label>
+                    <input class="control" [(ngModel)]="char.nature" name="char-nature" type="text" id="char-nature"/>
+                </div>
+            </div>
+            <div class="column">
+                <div class="control is-grouped">
+                    <label class="control-label" for="char-resources">Resources</label>
+                    <input class="control" [(ngModel)]="char.resources" name="char-resources" type="text" id="char-resources"/>
+                </div>
+                <div class="control is-grouped">
+                    <label class="control-label" for="char-circles">Circles</label>
+                    <input class="control" [(ngModel)]="char.circles" name="char-circles" type="text" id="char-circles"/>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
