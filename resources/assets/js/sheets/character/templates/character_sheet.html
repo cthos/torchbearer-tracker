@@ -31,33 +31,54 @@
                     </div>
                 </div>
                 <div class="column">
-                    <div class="control is-grouped">
+                    <div class="control is-grouped is-fullwidth">
                         <label class="control-label" for="char-parents">Parents</label>
                         <input class="control" [(ngModel)]="char.parents" parents="char-parents" type="text"
                                id="char-parents"/>
                     </div>
-                    <div class="control is-grouped">
+                    <div class="control is-grouped is-fullwidth">
                         <label class="control-label" for="char-mentor">Mentor</label>
                         <input class="control" [(ngModel)]="char.mentor" name="char-mentor" type="text"
                                id="char-mentor"/>
                     </div>
-                    <div class="control is-grouped">
+                    <div class="control is-grouped is-fullwidth">
                         <label class="control-label" for="char-friend">Friend</label>
                         <input class="control" [(ngModel)]="char.friend" name="char-friend" type="text"
                                id="char-friend"/>
                     </div>
-                    <div class="control is-grouped">
+                    <div class="control is-grouped is-fullwidth">
                         <label class="control-label" for="char-enemy">Enemy</label>
                         <input class="control" [(ngModel)]="char.enemy" name="char-enemy" type="text" id="char-enemy"/>
                     </div>
-                    <div class="control is-grouped">
+                    <div class="control select is-grouped is-fullwidth">
                         <label class="control-label" for="char-level">Level</label>
-                        <input class="control" [(ngModel)]="char.level" name="char-level" type="text" id="char-level"/>
+                        <select [(ngModel)]="char.level" name="char-level" type="text" id="char-level">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
                     </div>
-                    <div class="control is-grouped">
+                    <div class="control select is-grouped is-fullwidth">
                         <label class="control-label" for="char-home">Alignment</label>
-                        <input class="control" [(ngModel)]="char.rainment" name="char-rainment" type="text"
-                               id="char-rainment"/>
+                        <select class="control" [(ngModel)]="char.rainment" name="char-rainment" type="text"
+                               id="char-rainment">
+                            <option value="unaligned">
+                                Unaligned
+                            </option>
+                            <option value="lawful">
+                                Lawful
+                            </option>
+                            <option value="chaotic">
+                                Chaotic
+                            </option>
+                        </select>
                     </div>
                 </div>
             </div>
