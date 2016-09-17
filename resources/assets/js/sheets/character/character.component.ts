@@ -12,7 +12,7 @@ export class CharacterComponent {
         class: 'Fighter',
         age: 29,
         home: 'Hommlet',
-        rainment: 'None'
+        raiment: 'None'
     }
 }
 
@@ -23,7 +23,7 @@ export class Character {
     class: string;
     age: number;
     home: string;
-    rainment: string;
+    raiment: string;
     parents: string;
     mentor: string;
     friend: string;
