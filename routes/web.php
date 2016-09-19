@@ -15,4 +15,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::resource('character', 'CharacterController');
 Route::get('sheet/character', 'SheetController@character')->name('sheet.character');

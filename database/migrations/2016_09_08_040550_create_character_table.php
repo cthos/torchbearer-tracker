@@ -24,6 +24,7 @@ class CreateCharacterTable extends Migration
             $table->integer('max_nature');
             $table->integer('resources');
             $table->integer('circles');
+            $table->integer('level');
             $table->json('extras'); // This is where enemy, parents, etc goes.
             $table->timestamps();
         });

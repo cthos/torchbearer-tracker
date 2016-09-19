@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Character;
 use App\Http\Requests\CharacterRequest;
 use Illuminate\Http\Request;
 
@@ -16,7 +17,9 @@ class CharacterController extends Controller
      */
     public function index()
     {
-        //
+        $characters = Character::paginate(10);
+
+        return response()->json($characters);
     }
 
     /**
@@ -37,7 +40,7 @@ class CharacterController extends Controller
      */
     public function store(CharacterRequest $request)
     {
-        //
+        $character = Character::create($request->input());
     }
 
     /**
