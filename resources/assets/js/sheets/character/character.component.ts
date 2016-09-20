@@ -10,7 +10,11 @@ import {Character} from "./character.model";
 })
 export class CharacterComponent implements OnInit {
     ngOnInit() : void {
-        this.charService.getCharacter(1).then(char => this.char = char);
+        var that = this;
+        this.charService.getCharacter(1).then(function (char) {
+            that.char = char;
+            console.log(that.char);
+        });
     }
 
     constructor(@Inject(CharService) private charService: CharService) {

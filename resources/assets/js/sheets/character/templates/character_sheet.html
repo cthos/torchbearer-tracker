@@ -26,29 +26,29 @@
                     </div>
                     <div class="control is-grouped">
                         <label class="control-label" for="char-home">Raiment</label>
-                        <input class="control" [(ngModel)]="char.raiment" name="char-raiment" type="text"
+                        <input class="control" *ngIf="char.extras" [(ngModel)]="char.extras.raiment" name="char-raiment" type="text"
                                id="char-raiment"/>
                     </div>
                 </div>
                 <div class="column">
                     <div class="control is-grouped is-fullwidth">
                         <label class="control-label" for="char-parents">Parents</label>
-                        <input class="control" [(ngModel)]="char.parents" name="char-parents" type="text"
+                        <input class="control" *ngIf="char.extras" [(ngModel)]="char.extras.parents" name="char-parents" type="text"
                                id="char-parents"/>
                     </div>
                     <div class="control is-grouped is-fullwidth">
                         <label class="control-label" for="char-mentor">Mentor</label>
-                        <input class="control" [(ngModel)]="char.mentor" name="char-mentor" type="text"
+                        <input class="control" *ngIf="char.extras" [(ngModel)]="char.extras.mentor" name="char-mentor" type="text"
                                id="char-mentor"/>
                     </div>
                     <div class="control is-grouped is-fullwidth">
                         <label class="control-label" for="char-friend">Friend</label>
-                        <input class="control" [(ngModel)]="char.friend" name="char-friend" type="text"
+                        <input class="control" *ngIf="char.extras" [(ngModel)]="char.extras.friend" name="char-friend" type="text"
                                id="char-friend"/>
                     </div>
                     <div class="control is-grouped is-fullwidth">
                         <label class="control-label" for="char-enemy">Enemy</label>
-                        <input class="control" [(ngModel)]="char.enemy" name="char-enemy" type="text" id="char-enemy"/>
+                        <input class="control" *ngIf="char.extras" [(ngModel)]="char.extras.enemy" name="char-enemy" type="text" id="char-enemy"/>
                     </div>
                     <div class="control select is-grouped is-fullwidth">
                         <label class="control-label" for="char-level">Level</label>
@@ -67,8 +67,8 @@
                     </div>
                     <div class="control select is-grouped is-fullwidth">
                         <label class="control-label" for="char-home">Alignment</label>
-                        <select class="control" [(ngModel)]="char.rainment" name="char-rainment" type="text"
-                               id="char-rainment">
+                        <select class="control" *ngIf="char.extras" [(ngModel)]="char.extras.alignment" name="char-alignment" type="text"
+                               id="char-alignment">
                             <option value="unaligned">
                                 Unaligned
                             </option>
