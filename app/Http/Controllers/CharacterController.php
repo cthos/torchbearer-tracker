@@ -51,7 +51,9 @@ class CharacterController extends Controller
      */
     public function show($id)
     {
-        //
+        $character = Character::findOrFail($id);
+
+        return response()->json($character);
     }
 
     /**

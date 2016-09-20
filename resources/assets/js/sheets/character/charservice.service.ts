@@ -1,17 +1,28 @@
-import { Injectable } from '@angular/core';
-import { Headers, Http } from '@angular/http';
+import { Injectable, Inject } from '@angular/core';
+import { Http } from '@angular/http';
+import 'rxjs/add/operator/toPromise';
 
-import {Character} from './character.component';
+import {Character} from './character.model';
 
 Injectable()
-class CharService {
-    constructor(private http: Http) { }
+export class CharService {
+    constructor(@Inject(Http) private http: Http) { }
 
-    getCharacters() : void {
-
+    getCharacters() : Promise<Character[]> {
+        return this.http.get('/characters')
+            .toPromise()
+            .then(response => response.json().data as Character[])
+            .catch(this.handleError);
     }
 
-    getCharacter(id) : void {
+    getCharacter(id) : Promise<Character> {
+        return this.http.get('/characters/' + id)
+            .toPromise()
+            .then(response => response.json().data as Character)
+            .catch(this.handleError);
+    }
+
+    handleError(err) : void {
 
     }
 }

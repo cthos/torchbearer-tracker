@@ -1,10 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
+import {CharService} from "./charservice.service";
+import {Character} from "./character.model";
+
 @Component({
     moduleId: module.id,
     selector: 'character-sheet',
-    templateUrl: './templates/character_sheet.html'
+    templateUrl: './templates/character_sheet.html',
+    providers: [CharService]
 })
 export class CharacterComponent {
+    constructor(@Inject(CharService) private charService: CharService) {}
+
     char : Character = <Character>{
         id: 1,
         name: 'Otto Wilson',
@@ -16,23 +22,3 @@ export class CharacterComponent {
     }
 }
 
-export class Character {
-    id: number;
-    name: string;
-    stock: string;
-    class: string;
-    age: number;
-    home: string;
-    raiment: string;
-    parents: string;
-    mentor: string;
-    friend: string;
-    enemy: string;
-    level: number;
-    alignment: string;
-    will: number;
-    health: number;
-    nature: number;
-    resources: number;
-    circles: number;
-}

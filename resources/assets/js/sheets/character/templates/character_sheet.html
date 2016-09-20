@@ -33,7 +33,7 @@
                 <div class="column">
                     <div class="control is-grouped is-fullwidth">
                         <label class="control-label" for="char-parents">Parents</label>
-                        <input class="control" [(ngModel)]="char.parents" parents="char-parents" type="text"
+                        <input class="control" [(ngModel)]="char.parents" name="char-parents" type="text"
                                id="char-parents"/>
                     </div>
                     <div class="control is-grouped is-fullwidth">
@@ -52,7 +52,7 @@
                     </div>
                     <div class="control select is-grouped is-fullwidth">
                         <label class="control-label" for="char-level">Level</label>
-                        <select [(ngModel)]="char.level" name="char-level" type="text" id="char-level">
+                        <select [(ngModel)]="char.level" name="char-level" type="text" name="char-level" id="char-level">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
