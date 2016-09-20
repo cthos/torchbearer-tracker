@@ -9,16 +9,16 @@ export class CharService {
     constructor(@Inject(Http) private http: Http) { }
 
     getCharacters() : Promise<Character[]> {
-        return this.http.get('/characters')
+        return this.http.get('/character')
             .toPromise()
-            .then(response => response.json().data as Character[])
+            .then(response => response.json() as Character[])
             .catch(this.handleError);
     }
 
     getCharacter(id) : Promise<Character> {
-        return this.http.get('/characters/' + id)
+        return this.http.get('/character/' + id)
             .toPromise()
-            .then(response => response.json().data as Character)
+            .then(response => response.json() as Character)
             .catch(this.handleError);
     }
 
