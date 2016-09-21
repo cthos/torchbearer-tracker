@@ -8,9 +8,8 @@ use App\Http\Requests;
 
 class SheetController extends Controller
 {
-    public function character(Request $request)
+    public function character($id, Request $request)
     {
-
-        return view('sheet.character');
+        return view('sheet.character')->withCharId($id);
     }
 }
