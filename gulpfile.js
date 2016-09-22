@@ -12,7 +12,7 @@ gulp.task('watch', function () {
 });
 
 gulp.task('compile-sass', function () {
-  
+
 });
 
 gulp.task("compile-ts", function () {
