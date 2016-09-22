@@ -1,88 +1,91 @@
 <h2>Character Sheet</h2>
 <div class="container columns">
     <div class="sheet-left column">
-        <form action="#" class="control is-horizontal">
-            <div class="columns">
-                <div class="column">
-                    <div class="control is-grouped">
-                        <label class="control-label" for="char-name">Name</label>
-                        <input class="control" [(ngModel)]="char.name" name="char-name" type="text" id="char-name"/>
-                    </div>
-                    <div class="control is-grouped">
-                        <label class="control-label" for="char-stock">Stock</label>
-                        <input class="control" [(ngModel)]="char.stock" name="char-stock" type="text" id="char-stock"/>
-                    </div>
-                    <div class="control is-grouped">
-                        <label class="control-label" for="char-class">Class</label>
-                        <input class="control" [(ngModel)]="char.class" name="char-class" type="text" id="char-class"/>
-                    </div>
-                    <div class="control is-grouped">
-                        <label class="control-label" for="char-age">Age</label>
-                        <input class="control" [(ngModel)]="char.age" name="char-age" type="text" id="char-age"/>
-                    </div>
-                    <div class="control is-grouped">
-                        <label class="control-label" for="char-home">Home</label>
-                        <input class="control" [(ngModel)]="char.home" name="char-home" type="text" id="char-home"/>
-                    </div>
-                    <div class="control is-grouped">
-                        <label class="control-label" for="char-home">Raiment</label>
-                        <input class="control" *ngIf="char.extras" [(ngModel)]="char.extras.raiment" name="char-raiment" type="text"
-                               id="char-raiment"/>
-                    </div>
+        <div class="columns">
+            <div class="column">
+                <div class="control is-grouped">
+                    <label class="control-label" for="char-name">Name</label>
+                    <input class="control" [(ngModel)]="char.name" name="char-name" type="text" id="char-name"/>
                 </div>
-                <div class="column">
-                    <div class="control is-grouped is-fullwidth">
-                        <label class="control-label" for="char-parents">Parents</label>
-                        <input class="control" *ngIf="char.extras" [(ngModel)]="char.extras.parents" name="char-parents" type="text"
-                               id="char-parents"/>
-                    </div>
-                    <div class="control is-grouped is-fullwidth">
-                        <label class="control-label" for="char-mentor">Mentor</label>
-                        <input class="control" *ngIf="char.extras" [(ngModel)]="char.extras.mentor" name="char-mentor" type="text"
-                               id="char-mentor"/>
-                    </div>
-                    <div class="control is-grouped is-fullwidth">
-                        <label class="control-label" for="char-friend">Friend</label>
-                        <input class="control" *ngIf="char.extras" [(ngModel)]="char.extras.friend" name="char-friend" type="text"
-                               id="char-friend"/>
-                    </div>
-                    <div class="control is-grouped is-fullwidth">
-                        <label class="control-label" for="char-enemy">Enemy</label>
-                        <input class="control" *ngIf="char.extras" [(ngModel)]="char.extras.enemy" name="char-enemy" type="text" id="char-enemy"/>
-                    </div>
-                    <div class="control select is-grouped is-fullwidth">
-                        <label class="control-label" for="char-level">Level</label>
-                        <select [(ngModel)]="char.level" name="char-level" type="text" name="char-level" id="char-level">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                        </select>
-                    </div>
-                    <div class="control select is-grouped is-fullwidth">
-                        <label class="control-label" for="char-home">Alignment</label>
-                        <select class="control" *ngIf="char.extras" [(ngModel)]="char.extras.alignment" name="char-alignment" type="text"
-                               id="char-alignment">
-                            <option value="unaligned">
-                                Unaligned
-                            </option>
-                            <option value="lawful">
-                                Lawful
-                            </option>
-                            <option value="chaotic">
-                                Chaotic
-                            </option>
-                        </select>
-                    </div>
+                <div class="control is-grouped">
+                    <label class="control-label" for="char-stock">Stock</label>
+                    <input class="control" [(ngModel)]="char.stock" name="char-stock" type="text" id="char-stock"/>
+                </div>
+                <div class="control is-grouped">
+                    <label class="control-label" for="char-class">Class</label>
+                    <input class="control" [(ngModel)]="char.class" name="char-class" type="text" id="char-class"/>
+                </div>
+                <div class="control is-grouped">
+                    <label class="control-label" for="char-age">Age</label>
+                    <input class="control" [(ngModel)]="char.age" name="char-age" type="text" id="char-age"/>
+                </div>
+                <div class="control is-grouped">
+                    <label class="control-label" for="char-home">Home</label>
+                    <input class="control" [(ngModel)]="char.home" name="char-home" type="text" id="char-home"/>
+                </div>
+                <div class="control is-grouped">
+                    <label class="control-label" for="char-home">Raiment</label>
+                    <input class="control" *ngIf="char.extras" [(ngModel)]="char.extras.raiment" name="char-raiment" type="text"
+                           id="char-raiment"/>
                 </div>
             </div>
-        </form>
+            <div class="column">
+                <div class="control is-grouped is-fullwidth">
+                    <label class="control-label" for="char-parents">Parents</label>
+                    <input class="control" *ngIf="char.extras" [(ngModel)]="char.extras.parents" name="char-parents" type="text"
+                           id="char-parents"/>
+                </div>
+                <div class="control is-grouped is-fullwidth">
+                    <label class="control-label" for="char-mentor">Mentor</label>
+                    <input class="control" *ngIf="char.extras" [(ngModel)]="char.extras.mentor" name="char-mentor" type="text"
+                           id="char-mentor"/>
+                </div>
+                <div class="control is-grouped is-fullwidth">
+                    <label class="control-label" for="char-friend">Friend</label>
+                    <input class="control" *ngIf="char.extras" [(ngModel)]="char.extras.friend" name="char-friend" type="text"
+                           id="char-friend"/>
+                </div>
+                <div class="control is-grouped is-fullwidth">
+                    <label class="control-label" for="char-enemy">Enemy</label>
+                    <input class="control" *ngIf="char.extras" [(ngModel)]="char.extras.enemy" name="char-enemy" type="text" id="char-enemy"/>
+                </div>
+                <div class="control select is-grouped is-fullwidth">
+                    <label class="control-label" for="char-level">Level</label>
+                    <select [(ngModel)]="char.level" name="char-level" type="text" name="char-level" id="char-level">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+                <div class="control select is-grouped is-fullwidth">
+                    <label class="control-label" for="char-home">Alignment</label>
+                    <select class="control" *ngIf="char.extras" [(ngModel)]="char.extras.alignment" name="char-alignment" type="text"
+                           id="char-alignment">
+                        <option value="unaligned">
+                            Unaligned
+                        </option>
+                        <option value="lawful">
+                            Lawful
+                        </option>
+                        <option value="chaotic">
+                            Chaotic
+                        </option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <label class="label">Belief</label>
+        <div class="control">
+            <textarea class="control" *ngIf="char.extras" [(ngModel)]="char.extras.belief" name="char-belief" type="text" id="char-belief">
+            </textarea>
+        </div>
     </div>
     <div class="sheet-right column">
         <h3 class="text-center">
