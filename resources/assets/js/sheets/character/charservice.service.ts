@@ -18,7 +18,7 @@ export class CharService {
     getCharacter(id) : Promise<Character> {
         return this.http.get('/character/' + id)
             .toPromise()
-            .then(response => response.json() as Character)
+            .then(response => new Character(response.json()))
             .catch(this.handleError);
     }
 

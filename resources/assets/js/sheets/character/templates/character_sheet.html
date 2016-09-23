@@ -109,8 +109,8 @@
                     <td>Checks</td>
                 </tr>
                 </thead>
-                <tbody>
-                    <tr>
+                <tbody *ngIf="char.traits">
+                    <tr *ngFor="let trait of char.traits">
                         <td>
                             <input type="text" />
                         </td>
