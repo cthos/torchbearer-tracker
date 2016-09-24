@@ -112,19 +112,23 @@
                 <tbody *ngIf="char.traits">
                     <tr *ngFor="let trait of char.traits">
                         <td>
-                            <input type="text" />
+                            <input type="text" [value]="trait.name" />
                         </td>
                         <td>
                             <div class="control select">
-                                <select class="control" name="char-instinct-1" id="char-instinct-1">
+                                <select [value]="trait.level" class="control" name="char-level" id="char-level">
                                     <option value="1">One</option>
                                     <option value="2">Two</option>
                                     <option value="3">Three</option>
                                 </select>
                             </div>
                         </td>
-                        <td></td>
-                        <td></td>
+                        <td>
+                            {{trait.uses}}
+                        </td>
+                        <td>
+                            {{trait.checks}}
+                        </td>
                     </tr>
                 </tbody>
             </table>

@@ -35,12 +35,12 @@ class CharacterTableSeeder extends Seeder
                 'raiment' => $faker->word,
                 'age'     => $faker->numberBetween(19, 45),
                 'alignment' => $faker->randomElement(['unaligned', 'lawful', 'chaotic']),
-                'traits' => [
-                    'name'   => $faker->words(2),
+                'traits' => [[
+                    'name'   => $faker->sentence(2),
                     'uses'   => $faker->numberBetween(0, 5),
                     'level'  => $faker->numberBetween(1, 3),
                     'checks' => $faker->numberBetween(0, 10),
-                ],
+                ]],
             ],
         ];
 
