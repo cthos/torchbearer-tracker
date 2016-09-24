@@ -34,7 +34,7 @@ export class Character {
         return this.extras.traits.concat(padArr);
     }
 }
-
+ 
 export class CharExtras {
     parents: string;
     enemy: string;

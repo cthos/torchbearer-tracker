@@ -19,7 +19,8 @@ gulp.task("compile-ts", function () {
     return gulp.src(['resources/assets/js/**/*.ts', 'typings/**/*.d.ts'])
       .pipe(ts({
         experimentalDecorators: true,
-        sortOutput: true
+        sortOutput: true,
+        target: 'es5'
       }))
       .js
       .pipe(gulp.dest("public/js/"));
