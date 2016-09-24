@@ -12,4 +12,9 @@ class SheetController extends Controller
     {
         return view('sheet.character')->withCharId($id);
     }
+
+    public function gm(Request $request)
+    {
+        return view('sheet.gm');
+    }
 }

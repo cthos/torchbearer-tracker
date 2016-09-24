@@ -17,3 +17,4 @@ Route::get('/', function () {
 
 Route::resource('character', 'CharacterController');
 Route::get('sheet/character/{id}', 'SheetController@character')->name('sheet.character');
+Route::get('sheet/gm', 'SheetController@gm')->name('sheet.gm');
