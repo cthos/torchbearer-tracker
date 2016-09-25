@@ -3,6 +3,7 @@ const gulp = require("gulp");
 const ts = require("gulp-typescript");
 const dbug = require("gulp-debug");
 const concat = require("gulp-concat");
+const sass = require("gulp-sass");
 
 gulp.task('default', ['compile-ts', 'copy-templates']);
 
@@ -12,7 +13,12 @@ gulp.task('watch', function () {
 });
 
 gulp.task('compile-sass', function () {
-
+  gulp.src([
+    'resources/assets/sass/**/*.scss'
+  ])
+  .pipe(sass())
+  .pipe(concat('custom.css'))
+  .pipe(gulp.dest('public/css/'));
 });
 
 gulp.task("compile-ts", function () {
