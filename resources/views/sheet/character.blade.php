@@ -7,6 +7,6 @@
     SystemJS.import('sheets/character/charmain');
 </script>
 
-<character-sheet [character]="charId"></character-sheet>
+<character-sheet></character-sheet>
 
 @endsection
