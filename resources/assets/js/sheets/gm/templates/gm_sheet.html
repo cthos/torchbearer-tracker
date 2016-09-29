@@ -5,13 +5,13 @@
     <p>
         Phase Progress
     </p>
-    <progress class="progress is-primary" value="1" max="4"></progress>
+    <progress class="progress is-primary" value="{{phaseCount}}" max="4"></progress>
 
     <h4>Turn Counter</h4>
     <p class="control is-grouped">
-        <button class="button is-large">-</button>
-        <span class="button is-large">1</span>
-        <button class="button is-large">+</button>
+        <button class="button is-large" (click)="decrementPhaseCounter()">-</button>
+        <span class="button is-large">{{phaseCount}}</span>
+        <button class="button is-large" (click)="incrementPhaseCounter()">+</button>
     </p>
 </div>
 
