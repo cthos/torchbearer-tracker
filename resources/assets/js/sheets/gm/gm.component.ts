@@ -7,6 +7,7 @@ import { Component, Input, Inject, OnInit } from '@angular/core';
 })
 export class GMComponent implements OnInit {
     phaseCount : number = 1;
+    currentPhase : string = 'adventure';
 
     ngOnInit() : void {
 

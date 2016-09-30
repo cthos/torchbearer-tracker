@@ -1,9 +1,14 @@
-<div class="adventure-phase">
-    <h3>
-        Adventure Phase
-    </h3>
+<div class="phase-track select">
+    <select name="adventure" id="adventure" [(ngModel)]="currentPhase">
+        <option value="adventure">Adventure</option>
+        <option value="camp">Camp</option>
+        <option value="town">Town</option>
+    </select>
+</div>
+
+<div class="adventure-phase" *ngIf="currentPhase == 'adventure'">
     <p>
-        Phase Progress
+        Adventure Phase Progress
     </p>
     <progress class="progress is-primary" value="{{phaseCount}}" max="4"></progress>
 
@@ -13,6 +18,26 @@
         <span class="button is-large">{{phaseCount}}</span>
         <button class="button is-large" (click)="incrementPhaseCounter()">+</button>
     </p>
+</div>
+
+<div class="camp-phase" *ngIf="currentPhase == 'camp'">
+    <h3>Camp Settings</h3>
+    <div class="control is-grouped">
+        <div class="select">
+            <select name="campSafety" id="campSafety">
+            <option value="typical">Typical</option>
+            <option value="unsafe">Unsafe</option>
+            <option value="dangerous">Dangerous</option>
+        </select>
+        </div>
+        <div class="select">
+            <select name="campLocation" id="campLocation">
+            <option value="wilderness">Wilderness</option>
+            <option value="underground">Underground</option>
+        </select>
+        </div>
+        <button class="button is-danger">Roll</button>
+    </div>
 </div>
 
 <h3>
