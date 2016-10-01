@@ -8,8 +8,14 @@ import { Component, Input, Inject, OnInit } from '@angular/core';
 export class GMComponent implements OnInit {
     phaseCount : number = 1;
     currentPhase : string = 'adventure';
+    campLocation : string;
+    campSafety : string;
 
     ngOnInit() : void {
+
+    }
+
+    rollCamp() : void {
 
     }
 

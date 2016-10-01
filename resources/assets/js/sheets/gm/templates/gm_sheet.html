@@ -23,20 +23,20 @@
 <div class="camp-phase" *ngIf="currentPhase == 'camp'">
     <h3>Camp Settings</h3>
     <div class="control is-grouped">
-        <div class="select">
+        <div class="select" [(ngModel)]="campSafety">
             <select name="campSafety" id="campSafety">
             <option value="typical">Typical</option>
             <option value="unsafe">Unsafe</option>
             <option value="dangerous">Dangerous</option>
         </select>
         </div>
-        <div class="select">
+        <div class="select" [(ngModel)]="campLocation">
             <select name="campLocation" id="campLocation">
             <option value="wilderness">Wilderness</option>
             <option value="underground">Underground</option>
         </select>
         </div>
-        <button class="button is-danger">Roll</button>
+        <button class="button is-danger" (click)="rollCamp()">Roll</button>
     </div>
 </div>
 
