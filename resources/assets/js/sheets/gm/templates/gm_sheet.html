@@ -45,5 +45,27 @@
 </h3>
 
 <div class="light-sources">
+    <div class="light-container candles-container control is-grouped">
+        <div class="select">
+            <select name="light" id="light" [(ngModel)]="formSelectedLight">
+                <option value="candle">Candle</option>
+                <option value="torch">Torch</option>
+                <option value="lantern">Lanter</option>
+            </select>
+        </div>
+        <button class="button is-primary" (click)="addLight()">Add Light</button>
+    </div>
 
+    <div class="running-lights">
+        <table class="table">
+            <tr>
+                <td>Type</td>
+                <td>Remaining Turns</td>
+            </tr>
+            <tr class="running-light" *ngFor="let light of lights">
+                <td>{{light.lightType}}</td>
+                <td>{{light.turnsRemaining}}</td>
+            </tr>
+        </table>
+    </div>
 </div>
