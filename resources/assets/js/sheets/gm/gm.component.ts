@@ -35,7 +35,6 @@ export class GMComponent implements OnInit {
 
     addLight() : LightSource {
         let newLight = new LightSource(this.formSelectedLight);
-        newLight.resetRemainingTurns();
 
         this.lights.push(newLight);
 
@@ -64,9 +63,14 @@ export class GMComponent implements OnInit {
 export class LightSource {
     lightType: string;
     turnsRemaining: number;
+    dim: number;
+    light: number;
 
     constructor(t: string) {
         this.lightType = t;
+
+        this.resetRemainingTurns();
+        this.setLightCoverage();
     }
 
     resetRemainingTurns() : this {
@@ -79,6 +83,25 @@ export class LightSource {
                 break;
             case 'candle':
                 this.turnsRemaining = 4;
+                break;
+        }
+
+        return this;
+    }
+
+    setLightCoverage() : this {
+        switch(this.lightType) {
+            case 'torch':
+                this.light = 2;
+                this.dim = 2;
+                break;
+            case 'lantern':
+                this.light = 3;
+                this.dim = 3;
+                break;
+            case 'candle':
+                this.light = 1;
+                this.dim = 1;
                 break;
         }
 

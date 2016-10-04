@@ -50,7 +50,7 @@
             <select name="light" id="light" [(ngModel)]="formSelectedLight">
                 <option value="candle">Candle</option>
                 <option value="torch">Torch</option>
-                <option value="lantern">Lanter</option>
+                <option value="lantern">Lantern</option>
             </select>
         </div>
         <button class="button is-primary" (click)="addLight()">Add Light</button>
@@ -61,10 +61,14 @@
             <tr>
                 <td>Type</td>
                 <td>Remaining Turns</td>
+                <td># in Light</td>
+                <td># in Dim Light</td>
             </tr>
             <tr class="running-light" *ngFor="let light of lights">
                 <td>{{light.lightType}}</td>
                 <td>{{light.turnsRemaining}}</td>
+                <td>{{light.light}}</td>
+                <td>{{light.dim}}</td>
             </tr>
         </table>
     </div>
