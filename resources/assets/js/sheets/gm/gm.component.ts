@@ -1,4 +1,5 @@
 import { Component, Input, Inject, OnInit } from '@angular/core';
+import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 
 @Component({
     moduleId: module.id,
@@ -8,11 +9,16 @@ import { Component, Input, Inject, OnInit } from '@angular/core';
 export class GMComponent implements OnInit {
     phaseCount : number = 1;
     currentPhase : string = 'adventure';
-    campLocation : string;
-    campSafety : string;
+    campLocation : string = 'wilderness';
+    campSafety : string = 'typical';
     formSelectedLight: string = 'candle';
 
     lights : LightSource[] = [];
+
+    constructor(@Inject(ToastsManager) private toast: ToastsManager)
+    {
+
+    }
 
     ngOnInit() : void {
 
@@ -53,6 +59,7 @@ export class GMComponent implements OnInit {
         this.phaseCount++;
 
         if (this.phaseCount > 4) {
+            this.toast.error('PCs gain a condition.');
             this.phaseCount = 1;
         }
 

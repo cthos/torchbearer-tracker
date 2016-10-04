@@ -48,7 +48,7 @@ gulp.task('copy-css-framework', function () {
 
 gulp.task('copy-node-modules', function () {
   const src = [
-    'node_modules/{@angular,reflect-metadata,rxjs,systemjs,zone.js}/**/*'
+    'node_modules/{@angular,reflect-metadata,rxjs,systemjs,zone.js,ng2-toastr}/**/*'
   ];
 
   return gulp.src(src)

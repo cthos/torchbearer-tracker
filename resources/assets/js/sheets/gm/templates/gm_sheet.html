@@ -1,75 +1,84 @@
-<div class="phase-track select">
-    <select name="adventure" id="adventure" [(ngModel)]="currentPhase">
-        <option value="adventure">Adventure</option>
-        <option value="camp">Camp</option>
-        <option value="town">Town</option>
-    </select>
+<div class="phase-track content container">
+    <label for="adventure" class="label">
+        Current Phase
+    </label>
+    <div class="select">
+        <select name="adventure" id="adventure" [(ngModel)]="currentPhase">
+            <option value="adventure">Adventure</option>
+            <option value="camp">Camp</option>
+            <option value="town">Town</option>
+        </select>
+    </div>
 </div>
 
-<div class="adventure-phase" *ngIf="currentPhase == 'adventure'">
-    <p>
-        Adventure Phase Progress
-    </p>
-    <progress class="progress is-primary" value="{{phaseCount}}" max="4"></progress>
-
-    <h4>Turn Counter</h4>
-    <p class="control is-grouped">
-        <button class="button is-large" (click)="decrementPhaseCounter()">-</button>
-        <span class="button is-large">{{phaseCount}}</span>
-        <button class="button is-large" (click)="incrementPhaseCounter()">+</button>
-    </p>
+<div class="adventure-phase container box" *ngIf="currentPhase == 'adventure'">
+    <h3>Adventure Phase</h3>
+    <div class="columns">
+        <div class="column is-one-third">
+            <p>
+                Adventure Phase Progress
+            </p>
+            <progress class="progress is-primary" value="{{phaseCount}}" max="4"></progress>
+            <p class="control is-grouped">
+                <button class="button is-medium" (click)="decrementPhaseCounter()">-</button>
+                <span class="button is-medium">{{phaseCount}}</span>
+                <button class="button is-medium" (click)="incrementPhaseCounter()">+</button>
+            </p>
+        </div>
+    </div>
 </div>
 
-<div class="camp-phase" *ngIf="currentPhase == 'camp'">
+<div class="camp-phase container box" *ngIf="currentPhase == 'camp'">
     <h3>Camp Settings</h3>
     <div class="control is-grouped">
-        <div class="select" [(ngModel)]="campSafety">
-            <select name="campSafety" id="campSafety">
-            <option value="typical">Typical</option>
-            <option value="unsafe">Unsafe</option>
-            <option value="dangerous">Dangerous</option>
-        </select>
+        <div class="select">
+            <select name="campSafety" id="campSafety" [(ngModel)]="campSafety">
+                <option value="typical">Typical</option>
+                <option value="unsafe">Unsafe</option>
+                <option value="dangerous">Dangerous</option>
+            </select>
         </div>
-        <div class="select" [(ngModel)]="campLocation">
-            <select name="campLocation" id="campLocation">
-            <option value="wilderness">Wilderness</option>
-            <option value="underground">Underground</option>
-        </select>
+        <div class="select">
+            <select name="campLocation" id="campLocation" [(ngModel)]="campLocation">
+                <option value="wilderness">Wilderness</option>
+                <option value="underground">Underground</option>
+            </select>
         </div>
         <button class="button is-danger" (click)="rollCamp()">Roll</button>
     </div>
 </div>
 
-<h3>
-    Ambient Light
-</h3>
+<div class="light-sources container content">
+    <h3>
+        Ambient Light
+    </h3>
 
-<div class="light-sources">
-    <div class="light-container candles-container control is-grouped">
-        <div class="select">
-            <select name="light" id="light" [(ngModel)]="formSelectedLight">
-                <option value="candle">Candle</option>
-                <option value="torch">Torch</option>
-                <option value="lantern">Lantern</option>
-            </select>
+    <div class="light-container candles-container box">
+        <div class="control is-grouped">
+            <div class="select">
+                <select name="light" id="light" [(ngModel)]="formSelectedLight">
+                    <option value="candle">Candle</option>
+                    <option value="torch">Torch</option>
+                    <option value="lantern">Lantern</option>
+                </select>
+            </div>
+            <button class="button is-primary" (click)="addLight()">Add Light</button>
         </div>
-        <button class="button is-primary" (click)="addLight()">Add Light</button>
-    </div>
-
-    <div class="running-lights">
-        <table class="table">
-            <tr>
-                <td>Type</td>
-                <td>Remaining Turns</td>
-                <td># in Light</td>
-                <td># in Dim Light</td>
-            </tr>
-            <tr class="running-light" *ngFor="let light of lights">
-                <td>{{light.lightType}}</td>
-                <td>{{light.turnsRemaining}}</td>
-                <td>{{light.light}}</td>
-                <td>{{light.dim}}</td>
-            </tr>
-        </table>
+        <div class="running-lights">
+            <table class="table">
+                <tr>
+                    <td>Type</td>
+                    <td>Remaining Turns</td>
+                    <td># in Light</td>
+                    <td># in Dim Light</td>
+                </tr>
+                <tr class="running-light" *ngFor="let light of lights">
+                    <td>{{light.lightType}}</td>
+                    <td>{{light.turnsRemaining}}</td>
+                    <td>{{light.light}}</td>
+                    <td>{{light.dim}}</td>
+                </tr>
+            </table>
+        </div>
     </div>
 </div>

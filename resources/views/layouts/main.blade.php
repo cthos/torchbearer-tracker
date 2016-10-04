@@ -3,6 +3,7 @@
     <title>Torchbearer Tracker</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/css/bulma.css">
+    <link rel="stylesheet" href="/js/ng2-toastr/bundles/ng2-toastr.min.css">
 
     <script src='/js/systemjs/dist/system-polyfills.js'></script>
 
@@ -14,7 +15,7 @@
     <script type="text/javascript">
         SystemJS.config({
             baseURL: '/js',
-            map : {
+            map: {
                 '@angular/core': '@angular/core/bundles/core.umd.js',
                 '@angular/common': '@angular/common/bundles/common.umd.js',
                 '@angular/compiler': '@angular/compiler/bundles/compiler.umd.js',
@@ -23,16 +24,17 @@
                 '@angular/http': '@angular/http/bundles/http.umd.js',
                 '@angular/router': '@angular/router/bundles/router.umd.js',
                 '@angular/forms': '@angular/forms/bundles/forms.umd.js',
-                'rxjs' : 'rxjs'
+                'rxjs': 'rxjs'
             },
             packages: {
-                'rxjs' : { main: 'bundles/Rx.umd.js', defaultExtension: 'js' },
-                'sheets/character' : {
+                'ng2-toastr' : {main: 'ng2-toastr/bundles/ng2-toastr.min.js'},
+                'rxjs': {main: 'bundles/Rx.umd.js', defaultExtension: 'js'},
+                'sheets/character': {
                     paths: {
                         "*": "*.js"
                     }
                 },
-                'sheets/gm' : {
+                'sheets/gm': {
                     paths: {
                         "*": "*.js"
                     }
@@ -44,17 +46,18 @@
 </head>
 
 <body>
-<nav class="nav">
-    <section class="nav-left">
-        <a class="nav-item is-brand" href="#navbar" class="navbar-brand">Torchbearer Tracker</a>
-    </section>
-    <section class="nav-right">
-    </section>
-</nav>
+    <nav class="nav">
+        <section class="nav-left">
+            <a class="nav-item is-brand" href="#navbar" class="navbar-brand">Torchbearer Tracker</a>
+        </section>
+        <section class="nav-right">
+        </section>
+    </nav>
 
+    <div class="content">
+        @yield('content')
+    </div>
 
-
-@yield('content')
 </body>
 
 </html>
