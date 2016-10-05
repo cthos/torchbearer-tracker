@@ -23,7 +23,7 @@
             <p class="control is-grouped">
                 <button class="button is-medium" (click)="decrementPhaseCounter()">-</button>
                 <span class="button is-medium">{{phaseCount}}</span>
-                <button class="button is-medium" (click)="incrementPhaseCounter()">+</button>
+                <button class="button is-medium" (click)="incrementPhaseCounter(); light.dimTheLights();">+</button>
             </p>
         </div>
     </div>
@@ -65,4 +65,4 @@
     <h3>Winter</h3>
 </div>
 
-<light-sources></light-sources>
+<light-sources #light></light-sources>
