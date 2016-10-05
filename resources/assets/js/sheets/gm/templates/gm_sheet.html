@@ -65,37 +65,4 @@
     <h3>Winter</h3>
 </div>
 
-<div class="light-sources container content">
-    <h3>
-        Ambient Light
-    </h3>
-
-    <div class="light-container candles-container box">
-        <div class="control is-grouped">
-            <div class="select">
-                <select name="light" id="light" [(ngModel)]="formSelectedLight">
-                    <option value="candle">Candle</option>
-                    <option value="torch">Torch</option>
-                    <option value="lantern">Lantern</option>
-                </select>
-            </div>
-            <button class="button is-primary" (click)="addLight()">Add Light</button>
-        </div>
-        <div class="running-lights">
-            <table class="table">
-                <tr>
-                    <td>Type</td>
-                    <td>Remaining Turns</td>
-                    <td># in Light</td>
-                    <td># in Dim Light</td>
-                </tr>
-                <tr class="running-light" *ngFor="let light of lights">
-                    <td>{{light.lightType}}</td>
-                    <td>{{light.turnsRemaining}}</td>
-                    <td>{{light.light}}</td>
-                    <td>{{light.dim}}</td>
-                </tr>
-            </table>
-        </div>
-    </div>
-</div>
+<light-sources></light-sources>
