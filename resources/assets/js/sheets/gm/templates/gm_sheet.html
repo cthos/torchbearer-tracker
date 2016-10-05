@@ -53,11 +53,15 @@
     <h3>Town</h3>
 
     <p>Town Progress</p>
-    <p>Current State: </p>
-     <progress class="progress is-primary" value="0" max="7"></progress>
+    <p>Current State: {{getTownPhaseName()}}</p>
+     <progress class="progress is-primary" value="{{townPhaseId}}" max="6"></progress>
+
+    <p class="control is-grouped">
+        <button class="button is-medium" (click)="nextTownPhase()">Advance Phase</button>
+    </p>
 </div>
 
-<div class="winter-phase container box">
+<div class="winter-phase container box" *ngIf="currentPhase == 'winter'">
     <h3>Winter</h3>
 </div>
 
