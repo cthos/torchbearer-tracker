@@ -9,3 +9,7 @@ The character sheet is an online version of the paper character sheet, complete 
 ## GM Sheet
 
 The GM sheet helps track phases, current light levels, allows you to roll for camp checks, etc.
+
+# Credits
+
+This app made possible by Brobots #100-day-challenge. :cake:
