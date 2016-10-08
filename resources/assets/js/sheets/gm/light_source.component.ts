@@ -1,4 +1,5 @@
 import { Component, Input, Inject, OnInit } from '@angular/core';
+import {LightService} from "./light.service";
 
 
 @Component({
@@ -10,6 +11,10 @@ export class LightSourceComponent {
     formSelectedLight: string = 'candle';
 
     lights : LightSource[] = [];
+
+    constructor(@Inject(LightService) private ls: LightService) {
+        ls.lightsDimmed$.subscribe(x => this.dimTheLights());
+    }
 
     dimTheLights() : void {
         this.lights.forEach(function (l) {

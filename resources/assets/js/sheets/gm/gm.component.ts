@@ -1,10 +1,12 @@
 import { Component, Input, Inject, OnInit } from '@angular/core';
 import { ToastsManager } from 'ng2-toastr/ng2-toastr';
+import { LightService } from './light.service';
 
 @Component({
     moduleId: module.id,
     selector: 'gm-sheet',
-    templateUrl: './templates/gm_sheet.html'
+    templateUrl: './templates/gm_sheet.html',
+    providers: [LightService]
 })
 export class GMComponent implements OnInit {
     phaseCount : number = 1;
@@ -13,7 +15,7 @@ export class GMComponent implements OnInit {
     campLocation : string = 'wilderness';
     campSafety : string = 'typical';
 
-    constructor(@Inject(ToastsManager) private toast: ToastsManager)
+    constructor(@Inject(ToastsManager) private toast: ToastsManager, @Inject(LightService) private lights: LightService)
     {
 
     }
@@ -65,6 +67,8 @@ export class GMComponent implements OnInit {
             this.toast.error('PCs gain a condition.');
             this.phaseCount = 1;
         }
+
+        this.lights.dimTheLights(this.phaseCount);
     }
 }
 
