@@ -1,0 +1,17 @@
+<h3>Camp Settings</h3>
+<div class="control is-grouped">
+    <div class="select">
+        <select name="campSafety" id="campSafety" [(ngModel)]="campSafety">
+            <option value="typical">Typical</option>
+            <option value="unsafe">Unsafe</option>
+            <option value="dangerous">Dangerous</option>
+        </select>
+    </div>
+    <div class="select">
+        <select name="campLocation" id="campLocation" [(ngModel)]="campLocation">
+            <option value="wilderness">Wilderness</option>
+            <option value="underground">Underground</option>
+        </select>
+    </div>
+    <button class="button is-danger" (click)="rollCamp()">Roll</button>
+</div>

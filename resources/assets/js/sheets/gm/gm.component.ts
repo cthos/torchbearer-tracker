@@ -12,8 +12,6 @@ export class GMComponent implements OnInit {
     phaseCount : number = 1;
     townPhaseId : number = 0;
     currentPhase : string = 'adventure';
-    campLocation : string = 'wilderness';
-    campSafety : string = 'typical';
 
     constructor(@Inject(ToastsManager) private toast: ToastsManager, @Inject(LightService) private lights: LightService)
     {
@@ -21,10 +19,6 @@ export class GMComponent implements OnInit {
     }
 
     ngOnInit() : void {
-
-    }
-
-    rollCamp() : void {
 
     }
 
