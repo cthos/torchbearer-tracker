@@ -6,10 +6,11 @@ import {GMComponent} from './gm.component';
 import {LightSourceComponent} from './light_source.component';
 import {ToastModule} from 'ng2-toastr/ng2-toastr';
 import {CampComponent} from "./camp.component";
+import {TownComponent} from "./town.component";
 
 @NgModule({
     imports:      [ BrowserModule, FormsModule, HttpModule, ToastModule ],
-    declarations: [ GMComponent, LightSourceComponent, CampComponent ],
+    declarations: [ GMComponent, LightSourceComponent, CampComponent, TownComponent ],
     bootstrap:    [ GMComponent ]
 })
 export class GMApp { }
