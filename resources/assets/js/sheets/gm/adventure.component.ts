@@ -1,6 +1,5 @@
 import { Component, Input, Inject, OnInit } from '@angular/core';
 import { ToastsManager } from 'ng2-toastr/ng2-toastr';
-import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 import { LightService } from './light.service';
 
 @Component({
