@@ -13,20 +13,7 @@
 </div>
 
 <div class="adventure-phase container box" *ngIf="currentPhase == 'adventure'">
-    <h3>Adventure Phase</h3>
-    <div class="columns">
-        <div class="column is-one-third">
-            <p>
-                Adventure Phase Progress
-            </p>
-            <progress class="progress is-primary" value="{{phaseCount}}" max="4"></progress>
-            <p class="control is-grouped">
-                <button class="button is-medium" (click)="decrementPhaseCounter()">-</button>
-                <span class="button is-medium">{{phaseCount}}</span>
-                <button class="button is-medium" (click)="incrementPhaseCounter();">+</button>
-            </p>
-        </div>
-    </div>
+    <adventure-phase></adventure-phase>
 </div>
 
 <div class="camp-phase container box" *ngIf="currentPhase == 'camp'">

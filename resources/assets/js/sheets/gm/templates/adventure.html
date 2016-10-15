@@ -1,0 +1,30 @@
+<h3>Adventure Phase</h3>
+<div class="columns">
+    <div class="column is-two-thirds">
+        <p>
+            Adventure Phase Progress
+        </p>
+        <progress class="progress"
+                  [ngClass]="getPhaseStyle()"
+                  value="{{phaseCount}}"
+                  max="4"
+        ></progress>
+        <p class="control is-grouped">
+            <button class="button is-medium" (click)="decrementPhaseCounter()">-</button>
+            <span class="button is-medium">{{phaseCount}}</span>
+            <button class="button is-medium" (click)="incrementPhaseCounter();">+</button>
+        </p>
+    </div>
+    <div class="column">
+        <p>The Grind</p>
+        <ul>
+            <li>Hungry and Thirsty</li>
+            <li>Exhausted</li>
+            <li>Angry</li>
+            <li>Sick</li>
+            <li>Injured</li>
+            <li>Afraid</li>
+            <li>Dead</li>
+        </ul>
+    </div>
+</div>
