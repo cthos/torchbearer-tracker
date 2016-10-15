@@ -21,12 +21,22 @@
                     <td>Remaining Turns</td>
                     <td># in Light</td>
                     <td># in Dim Light</td>
+                    <td></td>
                 </tr>
-                <tr class="running-light" *ngFor="let light of lights">
+                <tr class="running-light" *ngFor="let light of lights; let i = index">
                     <td>{{light.lightType}}</td>
                     <td>{{light.turnsRemaining}}</td>
                     <td>{{light.light}}</td>
                     <td>{{light.dim}}</td>
+                    <td>
+                        <button type="button"  (click)="removeLight(i)" class="button">X</button>
+                    </td>
+                </tr>
+                <tr class="totals">
+                    <td>Totals:</td>
+                    <td></td>
+                    <td>{{totalInBright()}}</td>
+                    <td>{{totalInDim()}}</td>
                 </tr>
             </table>
         </div>

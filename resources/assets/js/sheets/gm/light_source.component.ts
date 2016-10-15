@@ -34,6 +34,32 @@ export class LightSourceComponent {
 
         return newLight;
     }
+
+    removeLight(lightIndex: number) : this {
+        this.lights.splice(lightIndex, 1);
+
+        return this;
+    }
+
+    totalInDim() : number {
+        let dim = 0;
+
+        this.lights.forEach(function (l) {
+           dim += l.dim;
+        });
+
+        return dim;
+    }
+
+    totalInBright() : number {
+        let bright = 0;
+
+        this.lights.forEach(function (l) {
+           bright += l.light;
+        });
+
+        return bright;
+    }
 }
 
 export class LightSource {
