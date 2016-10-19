@@ -1,4 +1,5 @@
 import { Component, Input, Inject, OnInit } from '@angular/core';
+import * as _ from 'lodash';
 
 
 @Component({
@@ -9,6 +10,12 @@ import { Component, Input, Inject, OnInit } from '@angular/core';
 export class TownComponent
 {
     townPhaseId : number = 0;
+
+    rollTownEvent() : void {
+        let roll = _.random(2, 12, false);
+
+        console.log(roll);
+    }
 
     getTownPhaseName() : string {
         let phaseNames = [

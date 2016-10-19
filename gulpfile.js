@@ -5,7 +5,7 @@ const dbug = require("gulp-debug");
 const concat = require("gulp-concat");
 const sass = require("gulp-sass");
 
-gulp.task('default', ['compile-ts', 'copy-templates']);
+gulp.task('default', ['compile-ts', 'copy-templates', 'copy-libs']);
 
 gulp.task('watch', function () {
   gulp.watch(['resources/assets/js/**/*.ts'], ['compile-ts']);
@@ -30,6 +30,11 @@ gulp.task("compile-ts", function () {
       }))
       .js
       .pipe(gulp.dest("public/js/"));
+});
+
+gulp.task('copy-libs', function () {
+  return gulp.src(['resources/libs/js/**/*.js'])
+    .pipe(gulp.dest('public/js'));
 });
 
 gulp.task("copy-templates", function () {

@@ -11,6 +11,8 @@
     <script src="/js/reflect-metadata/Reflect.js"></script>
     <script src='/js/systemjs/dist/system.js'></script>
 
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.16.4/lodash.min.js'></script>
+
 
     <script type="text/javascript">
         SystemJS.config({
@@ -24,6 +26,7 @@
                 '@angular/http': '@angular/http/bundles/http.umd.js',
                 '@angular/router': '@angular/router/bundles/router.umd.js',
                 '@angular/forms': '@angular/forms/bundles/forms.umd.js',
+                'lodash': 'lodash/lodash.custom.min.js',
                 'rxjs': 'rxjs'
             },
             packages: {
