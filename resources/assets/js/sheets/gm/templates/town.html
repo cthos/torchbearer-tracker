@@ -8,6 +8,16 @@
 
 <p>Town Progress</p>
 <p>Current State: {{getTownPhaseName()}}</p>
+
+<div class="town-section">
+    <div *ngIf="townPhaseId == 1">
+        <p>Watch : {{guildOnWatch}}</p>
+        <button class="button is-danger" (click)="rollGuildChart()">
+            Roll for Watch
+        </button>
+    </div>
+</div>
+
 <progress class="progress is-primary" value="{{townPhaseId}}" max="6"></progress>
 
 <p class="control is-grouped">
