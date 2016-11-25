@@ -54,6 +54,13 @@ export class TownGuildService
         ]
     }
 
+    /**
+     * Gets the results from the guild chart.
+     *
+     * @param tens
+     * @param ones
+     * @returns {any}
+     */
     getChartResults(tens, ones) : string
     {
         return this.results[tens][ones];

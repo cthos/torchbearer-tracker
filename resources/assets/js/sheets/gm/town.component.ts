@@ -24,7 +24,7 @@ export class TownComponent
     }
 
     rollGuildChart() : void {
-        let tens_roll = _.random(1, 10);
+        let tens_roll = _.random(1, 6);
         let ones_roll = _.random(1, 6);
 
         this.guildOnWatch = this.tgs.getChartResults(tens_roll, ones_roll);
