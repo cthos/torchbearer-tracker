@@ -1,6 +1,31 @@
 import { Injectable } from '@angular/core';
 
 @Injectable()
+export class TownEventService
+{
+    getChartResults(roll) : string
+    {
+        if (roll === 2) {
+            return 'Disaster';
+        }
+
+        if (roll > 2 && roll < 7) {
+            return 'Minor Inconvenience';
+        }
+
+        if (roll >= 7 && roll < 10) {
+            return 'Peaceful Town';
+        }
+
+        if (roll >= 10 && roll < 12) {
+            return 'Minor Break';
+        }
+
+        return 'Major Break';
+    }
+}
+
+@Injectable()
 export class TownGuildService
 {
     results = {
@@ -63,6 +88,6 @@ export class TownGuildService
      */
     getChartResults(tens, ones) : string
     {
-        return this.results[tens][ones];
+        return this.results[tens][ones - 1];
     }
 }

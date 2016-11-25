@@ -1,5 +1,5 @@
 import { Component, Input, Inject, Injectable, OnInit } from '@angular/core';
-import {TownGuildService} from './town.service';
+import {TownGuildService, TownEventService} from './town.service';
 import * as _ from 'lodash';
 
 
@@ -12,15 +12,16 @@ export class TownComponent
 {
     townPhaseId : number = 0;
     guildOnWatch : string = '';
+    event : string = '';
 
-    constructor(@Inject(TownGuildService) private tgs: TownGuildService) {
+    constructor(@Inject(TownGuildService) private tgs: TownGuildService, @Inject(TownEventService) private tes: TownEventService) {
 
     }
 
     rollTownEvent() : void {
         let roll = _.random(2, 12, false);
 
-        console.log(roll);
+        this.event = this.tes.getChartResults(roll);
     }
 
     rollGuildChart() : void {
